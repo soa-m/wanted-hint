@@ -1,3 +1,77 @@
 <!DOCTYPE html>
-<h1>hint1</h1>
+<head>
+<style>
+    body{
+        text-align: center;
+        margin:0;
+        padding:0;
+    }
+    .top{
+        padding-top: 36vh;
+        
+    }
+    a.btn_01 {
+        font-size: 1.3rem;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+    width:25vw;
+	margin: auto;
+	padding: 0.4rem 2rem 0.4rem 2rem;
+	font-weight: bold;
+	border: 2px solid #942622;
+	color: #942622;
+	transition: 0.1s;
+}
+/* a.btn_01:active {
+	color: #fff;
+	background: #942622;
+} */
+.button1{
+    margin-top:3vh;
+    margin-bottom:3vh;
+}
+    
+</style>
+</head>
+<body>
+    <div class="content" style="width:100vw; height:100vh; background-image:url(img/back22.jpg); background-size:cover;">
+        <div class="top">
+            <img src="img/head.png" style="height:5vh;">
+            <div class="button1">
+                <a tabindex="-1" class="btn_01" id="btn1">謎のヒントを見る</a>
+            </div>
+            <div id="hint">
+                <p>マークをそれぞれ矢印の方向から見た時、とある国の国旗になっているよ。</p>
+            </div>
+            <div>
+                <a abindex="-1" class="btn_01" id="btn2">謎は解けたけど場所がわからない</a>
+            </div>
+            <div id="hint2">
+
+            </div>
+        </div>
+    </div>
 </html>
+<script>
+    window.onload = (event) => {
+        document.getElementById("hint").style.display ="none";
+        document.getElementById("hint2").style.display ="none";
+};
+document.getElementById("btn1").onclick = function() {
+    if (document.getElementById("hint").style.display == "none"){
+        document.getElementById("hint").style.display ="block";
+    }else{
+        document.getElementById("hint").style.display ="none";
+    }
+};
+
+document.getElementById("btn2").onclick = function() {
+    if (document.getElementById("hint2").style.display == "none"){
+        document.getElementById("hint2").style.display ="block";
+    }else{
+        document.getElementById("hint2").style.display ="none";
+    }
+};
+</script>
