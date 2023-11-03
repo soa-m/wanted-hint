@@ -10,6 +10,9 @@
         padding-top: 36vh;
         
     }
+    h2{
+        color:#942622;
+    }
     a.btn_01 {
         font-size: 1.3rem;
 	display: block;
@@ -36,7 +39,7 @@
 </style>
 </head>
 <body>
-    <div class="content" style="width:100vw; height:100vh; background-image:url(img/back22.jpg); background-size:cover;">
+    <div class="content" style="width:100vw; height:100%; min-height: 100vh; background-image:url(img/back22.jpg); background-size:cover;">
         <div class="top">
             <img src="img/head.png" style="height:5vh;">
             <div class="button1">
@@ -44,12 +47,17 @@
             </div>
             <div id="hint">
                 <p>マークをそれぞれ矢印の方向から見た時、とある国の国旗になっているよ。</p>
+                <img src="img/toohint.png" style="width:50vw;">
             </div>
             <div>
-                <a abindex="-1" class="btn_01" id="btn2">謎は解けたけど場所がわからない</a>
+                <h2>謎は解けたけど場所がわからない方</h2>
+                <p>答えを入力したら、近くにあるHRなどが表示されます</p>
+                <p>答えが間違っている場合何も表示されません</p>
+                <input type="text" id="answer">
+                <input type="submit" id="sub">
             </div>
             <div id="hint2">
-
+                <p>2-CHRの近くにあるよ</p>
             </div>
         </div>
     </div>
@@ -67,11 +75,10 @@ document.getElementById("btn1").onclick = function() {
     }
 };
 
-document.getElementById("btn2").onclick = function() {
-    if (document.getElementById("hint2").style.display == "none"){
+document.getElementById("sub").onclick = function() {
+    var inp = document.getElementById("answer").value
+    if(inp == "フラダンス" || inp == "ふらだんす"){
         document.getElementById("hint2").style.display ="block";
-    }else{
-        document.getElementById("hint2").style.display ="none";
     }
-};
+}
 </script>
